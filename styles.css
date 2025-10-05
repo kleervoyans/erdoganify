@@ -1,0 +1,151 @@
+:root {
+  color-scheme: dark;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at top, #222 0%, #0c0c0c 60%);
+  color: #f8f9fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem 3rem;
+}
+
+.app-shell {
+  width: min(960px, 100%);
+  display: grid;
+  gap: 2rem;
+  background: rgba(8, 8, 12, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px);
+}
+
+.app-header {
+  text-align: center;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  margin: 0;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tagline {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(248, 249, 251, 0.78);
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.file-input {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.file-input input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 2.75rem;
+  background: linear-gradient(135deg, #f97316, #f59e0b);
+  color: #111;
+  font-weight: 700;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  box-shadow: 0 18px 35px rgba(249, 115, 22, 0.28);
+}
+
+.file-input:hover .button {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 40px rgba(249, 115, 22, 0.36);
+}
+
+.hint {
+  margin: 0;
+  color: rgba(248, 249, 251, 0.6);
+}
+
+.canvas-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(6, 6, 10, 0.65);
+  border-radius: 24px;
+  padding: 1.5rem;
+}
+
+#erdoganCanvas {
+  width: min(480px, 100%);
+  height: auto;
+  border-radius: 18px;
+  background: #000;
+  box-shadow: 0 32px 60px rgba(0, 0, 0, 0.45);
+}
+
+.status {
+  position: absolute;
+  bottom: 1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.6rem 1.25rem;
+  background: rgba(11, 11, 15, 0.8);
+  border-radius: 999px;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(248, 249, 251, 0.7);
+}
+
+.app-footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(248, 249, 251, 0.55);
+}
+
+.app-footer a {
+  color: #f97316;
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    padding: 2rem;
+  }
+
+  .status {
+    font-size: 0.8rem;
+  }
+}

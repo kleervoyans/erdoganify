@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Erdoganify</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="app-header">
+        <h1 class="title">Erdoganify</h1>
+        <p class="tagline">
+          Upload any image and watch every pixel reorganise itself into the
+          visage of Recep Tayyip Erdoğan.
+        </p>
+      </header>
+
+      <section class="controls">
+        <label class="file-input">
+          <span class="button">Choose an image</span>
+          <input type="file" accept="image/*" id="imageInput" />
+        </label>
+        <p class="hint">Large images will be resized to fit the canvas.</p>
+      </section>
+
+      <section class="canvas-wrapper">
+        <canvas id="erdoganCanvas" width="480" height="480" aria-label="Animation canvas"></canvas>
+        <div class="status" id="statusMessage">Waiting for image…</div>
+      </section>
+
+      <footer class="app-footer">
+        <p>
+          Inspired by <a href="https://github.com/Spu7Nix/obamify" target="_blank" rel="noopener noreferrer">Spu7Nix/obamify</a>.
+        </p>
+      </footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
