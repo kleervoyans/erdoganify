@@ -1,6 +1,7 @@
 # Erdoganify
 
-Turn any picture into a portrait of Recep Tayyip Erdoğan. Inspired by [Spu7Nix/obamify](https://github.com/Spu7Nix/obamify), this single-page web app takes an uploaded image, shuffles every pixel, and gradually reorganises it into an Erdoğan likeness.
+Stuff of nightmares. Turn any picture into a portrait of Recep Tayyip Erdoğan. Inspired by [Spu7Nix/obamify](https://github.com/Spu7Nix/obamify), this single-page web app takes an uploaded image, shuffles every pixel, and gradually reorganises it into an Erdoğan likeness.
+İzahı olmayan şeylerin mizahı olur.
 
 ## Getting started
 
