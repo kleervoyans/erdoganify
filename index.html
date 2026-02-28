@@ -3,38 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Erdoganify</title>
+    <title>Heidelberg DESFire Card Inspector</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main class="app-shell">
       <header class="app-header">
-        <h1 class="title">Erdoganify</h1>
+        <h1 class="title">Heidelberg DESFire Inspector</h1>
         <p class="tagline">
-          Upload any image and watch every pixel reorganise itself into the
-          visage of Recep Tayyip Erdoğan.
+          Analyze Flipper Zero NFC dumps for Uni Heidelberg style MIFARE DESFire EV1 cards.
         </p>
       </header>
 
-      <section class="controls">
-        <label class="file-input">
-          <span class="button">Choose an image</span>
-          <input type="file" accept="image/*" id="imageInput" />
-        </label>
-        <p class="hint">Large images will be resized to fit the canvas.</p>
+      <section class="controls card">
+        <label class="field-label" for="dumpInput">Paste dump text or raw hex bytes</label>
+        <textarea
+          id="dumpInput"
+          spellcheck="false"
+          placeholder="Example:\nUID: 04 7A 1B 2C 6F 22 80\nATQA: 03 44\nSAK: 20\nATS: 75 77 81 02 80"
+        ></textarea>
+
+        <div class="button-row">
+          <button id="analyzeButton" class="button">Analyze card</button>
+          <button id="loadSampleButton" class="button muted">Load sample</button>
+          <button id="clearButton" class="button muted">Clear</button>
+        </div>
       </section>
 
-      <section class="canvas-wrapper">
-        <canvas id="erdoganCanvas" width="480" height="480" aria-label="Animation canvas"></canvas>
-        <div class="status" id="statusMessage">Waiting for image…</div>
+      <section class="card results" id="resultPanel">
+        <h2>Result</h2>
+        <p class="status" id="statusMessage">Paste a dump and run analysis.</p>
+        <div id="resultContent" class="result-content"></div>
       </section>
 
       <footer class="app-footer">
         <p>
-          Inspired by <a href="https://github.com/Spu7Nix/obamify" target="_blank" rel="noopener noreferrer">Spu7Nix/obamify</a>.
+          Starter implementation for building a Heidelberg-focused card reader workflow on top of DESFire EV1 metadata.
         </p>
       </footer>
     </main>
+
     <script src="script.js"></script>
   </body>
 </html>

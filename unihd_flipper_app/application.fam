@@ -1,0 +1,22 @@
+App(
+    appid="unihd_card",
+    name="UniHD Card",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="unihd_card_app",
+    requires=["storage", "gui", "nfc", "dialogs"],
+    sources=[
+        "unihd_card_app.c",
+        "scenes/main_menu_scene.c",
+        "scenes/read_scene.c",
+        "scenes/load_scene.c",
+        "scenes/results_scene.c",
+        "scenes/about_scene.c",
+        "helpers/unihd_card.c",
+    ],
+    stack_size=4 * 1024,
+    fap_description="Read Uni Heidelberg DESFire student cards and show card metadata.",
+    fap_category="NFC",
+    fap_version="0.1.0",
+    fap_author="Local migration from UDECard",
+    fap_weburl="https://github.com/hahnworks/UDECard",
+)
